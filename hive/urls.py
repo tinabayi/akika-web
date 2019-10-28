@@ -11,6 +11,8 @@ urlpatterns=[
     url(r'^enterprise$', views.enterprise, name='enterprise'),
     url(r'^business$', views.business, name='business'),
     url(r'^academic$', views.academic, name='academic'),
+    url(r'^government$', views.government, name='government'),
+    url(r'^start$', views.start, name='start'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

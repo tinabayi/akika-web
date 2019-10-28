@@ -1,0 +1,90 @@
+\q
+CREATE DATABASE school;
+\c school
+CREATE TABLE course(name varchar,full_time boolean);
+ALTER TABLE courses ADD student_number integer;
+ALTER TABLE course ADD student_number integer;
+ALTER USER bayizere  password 'christine'
+\q
+ CREATE DATABASE watchlist;
+\c watchlist
+\dt
+CREATE DATABASE netpro;
+\q
+\c netpro
+\dt
+SELECT*netpro4G_aboutus;
+SELECT * netpro4G_aboutus;
+SELECT * FROM netpro4G_aboutus;
+SELECT * FROM netpro4G_aboutus  ;
+SELECT * FROM netpro4G_aboutus;
+SELECT * FROMnetpro4G_aboutus;
+SELECT *FROM netpro4G_aboutus;
+\q
+\c netpro
+\dt
+SELECT * FROM netpro4G_aboutus ;
+SELECT * FROM netpro4G_aboutus;
+\q
+\q
+\netpro
+\c netpro
+\dt
+SELECT*FROM netpro4G_aboutus ;
+\q
+\c netpro
+\dt
+SELECT * FROM netpro4G_aboutus;
+\q
+DROP DATABASE netpro;
+CREATE DATABASE netpro;
+\q
+\q
+\c here;
+CREATE DATABASE here;
+\q
+\c instagram
+CREATE DATABASE instagram;
+\q
+\c instagram
+ALTER USER bayizere password 'christine'
+\q
+CREATE DATABASE hehe;
+\q
+DELETE DATABASE hehe;
+DROP DATABASE hehe;
+CREATE DATABASE hehe;
+\q
+\c hehe
+\dt
+SELECT * FROM shop_cart;
+\q
+\c hehe
+SELECT * FROM shop_cart;
+SELECT * FROM shop_cart;
+SELECT * FROM shop_cart;
+\netpro
+\ c netpro
+\l
+\c netpro
+\dt
+SELECT * FROM netpro4G_contact ;
+SELECT * FROM netpro4G_contact ;
+\Q
+\q
+\c netpro
+\dt
+SELECT * FROM netpro4G_contact;
+select * from netpro4G_contact;
+SELECT*FROM netpro4G_contact;
+SELECT*FROM net pro4G_contact;
+SELECT * FROM netpro4G_contact;
+SELECT * FROM netpro4G_contact WHERE id==1;
+\q
+\c netpro;
+\dt
+SELECT * FROM netpro4G_contact;
+\q
+CREATE DATABASE akikahive;
+\q
+\s akikahive

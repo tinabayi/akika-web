@@ -1,0 +1,34 @@
+
+{%extends 'all-hive/base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    {% block content %}
+
+      <!-- search form end -->
+      <li>
+        <a href="{%url 'student'%}">Student application Form</a><br>
+        <a href="{%url 'freelancer'%}">Freeelancer application Form</a><br>
+        <a href="{%url 'enterprise'%}">Enterprise application Form</a><br>
+        <a href="{%url 'business'%}">Business application Form</a><br>
+        <a href="{%url 'academic'%}">Academic application Form</a><br>
+        <a href="{%url 'government'%}">Government application Form</a><br>
+      
+      </li>
+      
+
+      <style>
+      
+      body{
+        background-image: url(https://images.pexels.com/photos/209083/pexels-photo-209083.jpeg?cs=srgb&dl=animal-bee-blur-209083.jpg&fm=jpg);
+      }
+      </style>
+{% endblock %}
+</body>
+</html>

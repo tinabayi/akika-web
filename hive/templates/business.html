@@ -10,7 +10,18 @@
   {{form.media}}
 
 {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/basehive.css' %}"> {% endblock %}
+  <style> 
+   form {
+      width: 80%;
+      padding: 12px 20px;
+      margin: 30px 30px;
+      box-sizing: border-box;
+      border: none;
+      background-color: #3CBC8D;
+      color: white;
+    }
+    </style>
 
 </head>
 
@@ -20,7 +31,7 @@
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
+    <input type="submit" class="btn btn-success btn-lg" value="Submit">
   </form>
 
    {% block scripts %}

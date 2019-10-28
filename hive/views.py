@@ -1,9 +1,15 @@
 from django.shortcuts import render,redirect
-from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm
+from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm,GovernmentForm
+from django.contrib.auth.decorators import login_required
+
+
 
 # Create your views here.
 def welcome(request):
     return render(request, 'index.html')
+
+def start(request):
+    return render(request, 'start.html')
 
 def search_results(request):
 
@@ -18,6 +24,8 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'all-news/search.html',{"message":message}) 
 
+
+@login_required(login_url='/accounts/login/')
 def student(request):
     current_user = request.user
     if request.method == 'POST':
@@ -38,6 +46,8 @@ def student(request):
         form = StudentForm()
     return render(request, 'student.html', {"form": form})
 
+
+@login_required(login_url='/accounts/login/')
 def freelancer(request):
     current_user = request.user
     if request.method == 'POST':
@@ -56,6 +66,8 @@ def freelancer(request):
         form = FreelancerForm()
     return render(request, 'freelancer.html', {"form": form})
 
+
+@login_required(login_url='/accounts/login/')
 def enterprise(request):
     current_user = request.user
     if request.method == 'POST':
@@ -76,6 +88,8 @@ def enterprise(request):
         form =EnterpriseForm()
     return render(request, 'enterprise.html', {"form": form})
 
+
+@login_required(login_url='/accounts/login/')
 def business(request):
     current_user = request.user
     if request.method == 'POST':
@@ -96,6 +110,8 @@ def business(request):
         form = BusinessForm()
     return render(request, 'business.html', {"form": form})
 
+
+@login_required(login_url='/accounts/login/')
 def academic(request):
     current_user = request.user
     if request.method == 'POST':
@@ -116,10 +132,12 @@ def academic(request):
         form = AcademicForm()
     return render(request, 'academic.html', {"form": form})
 
-def student(request):
+
+@login_required(login_url='/accounts/login/')
+def government(request):
     current_user = request.user
     if request.method == 'POST':
-        form = StudentForm(request.POST, request.FILES)
+        form = GovernmentForm(request.POST, request.FILES)
         if form.is_valid():
            first_name = form.save(commit=False)
            last_name = form.save(commit=False)
@@ -133,25 +151,7 @@ def student(request):
         return redirect('welcome')
 
     else:
-        form = StudentForm()
-    return render(request, 'student.html', {"form": form})
+        form = GovernmentForm()
+    return render(request, 'government.html', {"form": form})
 
-def student(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = StudentForm(request.POST, request.FILES)
-        if form.is_valid():
-           first_name = form.save(commit=False)
-           last_name = form.save(commit=False)
-           education_level = form.save(commit=False)
-           student_email= form.save(commit=False)
-            # article.editor = current_user
-           first_name .save()
-           last_name .save()
-           education_level .save()
-           student_email .save()
-        return redirect('welcome')
-
-    else:
-        form = StudentForm()
-    return render(request, 'student.html', {"form": form})                      
+                   
