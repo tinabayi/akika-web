@@ -8,6 +8,7 @@ from django import forms
 
 
 
+
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
@@ -36,5 +37,19 @@ class AcademicForm(forms.ModelForm):
 class GovernmentForm(forms.ModelForm):
     class Meta:
         model = Government
-        exclude = ['']                                      
+        exclude = ['']    
+
+
+
+
+class ContactForm(forms.Form):
+    email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)   
+
+    widget=forms.TextInput(
+        attrs={
+            'style':'border-color:blue;'
+        }
+    )                            
         

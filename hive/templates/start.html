@@ -11,23 +11,253 @@
 <body>
     {% block content %}
 
-      <!-- search form end -->
-      <li>
-        <a href="{%url 'student'%}">Student application Form</a><br>
-        <a href="{%url 'freelancer'%}">Freeelancer application Form</a><br>
-        <a href="{%url 'enterprise'%}">Enterprise application Form</a><br>
-        <a href="{%url 'business'%}">Business application Form</a><br>
-        <a href="{%url 'academic'%}">Academic application Form</a><br>
-        <a href="{%url 'government'%}">Government application Form</a><br>
+    <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+      <!-- 
+    - Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
+    WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+    
+    <source src="/media/video/video.mp4" type="video/mp4">
+    
+    </video>
+
+<style>
+body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/akika.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/akika.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+
+
+
+</style>
+
+
+
+    <h1 style="color:darkgoldenrod; font-weight:bold;">FOCUS AREAS</h1>
+    <br>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+            <h3>FinTech</h3>
+          
+          <p>Financial technology, often
+          shortened to fintech, is the
+          technology and innovation
+          that aims to compete with
+          traditional financial methods.</p></div>
+
+      </div>
+
+
+      <div class="column">
+        <div class="card">
+          <h3>Internet Of Things</h3>
+          <p>The Internet of things extends the
+             Internet from traditional computer
+             devices to physical objects like
+appliances, sensors, and vehicles</p></div>
+      </div>
+
+
+
+      <div class="column">
+        
+        <div class="card">
+          <h3>Entrepreneurship</h3>
+          
+          <p>This process is called Customer
+Discovery and it is a key part of
+starting a business that is skipped
+by many aspiring entrepreneurs .</p></div>
+      </div>
+
+
+      <div class="column">
+        <div class="card">
+          
+          <h3>Software Programming</h3> 
+          <p>Software programmers
+             design these programs to carry out
+             specific functions using a
+              computer language to
+               develop programs.</p>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <div class="row">
+      <div class="column">
+          <div class="card">
+            
+            <h3>Cloud Computing</h3> 
+            <p>delivery of computing as a service
+                over a network, whereby
+                distributed resources are rented,
+                rather than owned, by an end
+                user as a utility .</p>
+              </div>
+        </div>
+
+
+
+        <div class="column">
+            <div class="card">
+              
+              <h3>Machine learning</h3> 
+              <p>Machine learning focuses on the
+                  development of computer
+                  programs that can access data
+                  and use it learn for themselves.</p>
+                </div>
+          </div>
+
+
+
+          <div class="column">
+              <div class="card">
+                
+                <h3>AI / Robotics</h3> 
+                <p>Robotics and AI. Artificial
+                    Intelligence (AI) is a general term
+                    that implies the use of a computer
+                    to model and/or replicate
+                    intelligent behavior .</p>
+                  </div>
+            </div>
+
+
+
+
+            <div class="column">
+                <div class="card">
+                  
+                  <h3>Blockchains /Crypto</h3> 
+                  <p>Blockchain technology is
+                      c ommonly associated with Bitcoin
+                      and other cryptocurrencies. It’s
+                      effectively a database that’s
+                      validated by a wider community.
+                      </p>
+                    </div>
+              </div>
+
+
+              <!-- <div class="column">
+                  <div class="card">
+                    
+                    <h3>Blockchains /Crypto</h3> 
+                    <p>Blockchain technology is
+                        c ommonly associated with Bitcoin
+                        and other cryptocurrencies. It’s
+                        effectively a database that’s
+                        validated by a wider community,
+                        rather than a central authority .</p></div>
+                </div> -->
+
+
+    </div>
+
+    <br>
+    
+      <ul style="text-align:center; color:yellow; font-size:20px;">
       
-      </li>
+
+          <li><p>Are you a student? <a href="{%url 'student'%}">apply Here</a></p></li>
+        <li><p>Are you a freelancer? <a href="{%url 'enterprise'%}">apply Here</a></p></li>
+        <li><p>Are you in business? <a href="{%url 'business'%}">apply Here</a></p></li>
+        <li> <p>Are you a in academic? <a href="{%url 'academic'%}">apply Here</a></p></li>
+        <li> <p>Are you a government? <a href="{%url 'government'%}">apply Here</a></p></li>
+<style>
+a:hover{
+  color:yellow;
+}
+</style>
+      
+      
+    </ul>
       
 
       <style>
-      
-      body{
-        background-image: url(https://images.pexels.com/photos/209083/pexels-photo-209083.jpeg?cs=srgb&dl=animal-bee-blur-209083.jpg&fm=jpg);
-      }
+    
+
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+h3{
+  color:darkgoldenrod;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
       </style>
 {% endblock %}
 </body>

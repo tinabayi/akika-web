@@ -1,0 +1,66 @@
+{%extends 'all-hive/base.html'%}
+
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  {% block styles %}
+
+    {% bootstrap_css %}
+    
+  {% endblock %}
+
+</head>
+<body>
+    {% block content %} 
+   
+                      
+
+    
+                 <div class="container">
+
+                    <br>
+                    <h1 style="text-align:center;color: darkgoldenrod; font-weight: bold; ">AKIKA-BEE-HIVE For Students</h1>
+                     <h3>Boosting opportunities for students for their professional
+                            development and enhancement of their entrepreneurial skills:</h3><br>
+                    <div class="row">
+
+
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i> Through AKIKA-Beehive open platform, students will be able to publicise their
+                                    innovative ideas and solutions which will most probably attract enterprises or
+                                    investors. Through this platform they will be able to communicate with their
+                                    peers in other Universities or High-Schools in Rwanda and exchange ideas with
+                                    people in business.</p> 
+                     </div><br>
+
+                      <div class="row">
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i>Akika-BeeHive will allow Enterprises working together with Academics and
+                                    Students with breakthrough ideas and will promote the settings for the develop
+                                    ment and advancement solutions and generate value for both society and
+                                    enterprises.</p>    
+                        </div><br>
+
+
+
+                      <div class="row">
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i>The use of AKIKA-BeeHive open innovation learning platform will stimulate mor
+                            e active students learning through teamwork at generating ideas, increase entre
+                            preneurship potential, improve students employability skills and enhance their c
+                            areer opportunities.</p>       
+                    </div><br>
+                  </div>
+
+
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>

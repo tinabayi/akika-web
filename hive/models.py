@@ -13,7 +13,11 @@ class Student(models.Model):
     last_name = models.CharField(max_length =60)
     education_level = models.CharField(max_length =120)
     student_email = models.EmailField()
-
+    @classmethod  
+    def search_by_first_name(cls,search_term):
+        student = cls.objects.filter(first_name__icontains=search_term)
+        return student
+        
 class Freelancer(models.Model):
     freelancer_names = models.CharField(max_length =60)
     project_name = models.CharField(max_length =60)

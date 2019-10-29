@@ -1,0 +1,89 @@
+{%extends 'all-hive/base.html'%}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+ 
+
+  {% block styles %}
+
+    {% bootstrap_css %}
+    
+  {% endblock %}
+
+</head>
+<body>
+    {% block content %} 
+   
+                      <div >
+                  
+                    <img src="/media/image/ab.jpeg" alt="test" class="img-responsive" style="width:100%; height:350px; margin-top:-30px; ">
+                  
+                    <div class="carousel-caption">
+                      <h1 style="margin-top:-200px; color: darkgoldenrod; font-weight: bold; font-size: 80px; font-family: 'Abril Fatface', cursive;">Our company</h1>
+                    </div>
+                  
+                 </div>
+              
+          
+                 <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+                 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Modak&display=swap" rel="stylesheet">
+
+
+    
+                 <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                         <h2 style="color: darkgoldenrod; font-weight: bold; font-size: 30px; font-family: 'Abril Fatface', cursive;">Mission</h2> 
+                         <p>Accelerate job creation and
+                                entrepreneurship, and create
+                                long-term, regional economic impact
+                                by offering clients access to a broad
+                                network of specialized resources. This is
+                                accomplished through efficient,
+                                personalized growth strategies that
+                                streamline the entrepreneur’s path to
+                                success.</p>
+                     </div>
+
+                      <div class="col-md-4">
+                          <h2 style="color: darkgoldenrod; font-weight: bold; font-size: 30px; font-family: 'Abril Fatface', cursive;">Objectives</h2>
+                          <p>Placing Rwanda to the global ICT map ca
+                                n only e fulfilled if the economic activity in
+                                ICT sector can be increased through
+                                software export activities. Rwanda can
+                                neither be isolated from the information
+                                revolution that is happening in the World
+                                nor it can avoid the avenues obtained fro
+                                m new technologies to earn foreign
+                                currencies for the development of the
+                                country infrastructure.</p>
+                        </div>
+
+
+
+                      <div class="col-md-4">
+                          <h2 style="color: darkgoldenrod; font-weight: bold; font-size: 30px; font-family: 'Abril Fatface', cursive;">What we Are?</h2>
+                          <p>We are a dynamic and vibrant community .
+                                that house a variety of IT business projects
+                                supported by professional office team
+                                and excellent facilities. AKIKA Beehive is
+                                an innovation platform that connect
+                                various entities and technology in order to
+                                look for digital solutions to current
+                                business, government and social changes.</p>
+                       </div>
+                    </div>
+                  </div>
+
+
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
