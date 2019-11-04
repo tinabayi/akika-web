@@ -24,9 +24,11 @@ urlpatterns=[
     url(r'^about$', views.about, name='about'),
     url(r'^solutions$', views.solutions, name='solutions'),
     url(r'^contact$', views.contact, name='contact'),
-
+    url(r'^solution$', views.solution1, name='solution'),
+    url(r'^enterpreneurship$', views.enterpreneurship, name='enterpreurship'), 
     url('email/', emailView, name='email'),
     url('success/', successView, name='success'),
+    
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

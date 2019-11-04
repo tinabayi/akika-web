@@ -49,4 +49,7 @@ class Government(models.Model):
     institution_location = models.CharField(max_length =60)
     institution_adress = models.IntegerField()
 
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
    

@@ -1,0 +1,64 @@
+{%extends 'all-hive/base.html'%}
+
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  {% block styles %}
+
+    {% bootstrap_css %}
+    
+  {% endblock %}
+
+</head>
+<body>
+    {% block content %} 
+   
+                      
+
+    
+                 <div class="container">
+
+                    <br>
+                    <h1 style="text-align:center;color: darkgoldenrod; font-weight: bold; ">AKIKA-BEE-HIVE For Enterpreurship</h1>
+                     <h3>Creating the Optimal Environment for Entrepreneurial Initiative:</h3><br>
+                    <div class="row">
+
+
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i> Entrepreneurs are the principal agents of change and innovation change in a
+                                market economy. Their dynamic is essential in these times of globalization
+                                and structural changes. Entrepreneurial activity create wealth and job, makes
+                                for a buoyant economy and constantly generates new or improved products
+                                or services.</p> 
+                     </div><br>
+
+                      <div class="row">
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i>Fostering entrepreneurship mean channeling the entrepreneurial drive into a
+                                process that take advantage of all the opportunities the economy can provide.</p>    
+                        </div><br>
+
+
+
+                      <div class="row">
+                            <p><i style='font-size:24px' class='fas'>&#xf121;</i>Through AKIKA-BeeHive we are implementing a strategy to foster
+                                community development by nurturing the development and growth of new s
+                                mall firms, community development agencies, high-schools and a
+                                combination of sponsors that seek to promote entrepreneurial talent and
+                                jobs, revitalize Rwandan economy, and assist in the development of technology.</p>       
+                    </div><br>
+                  </div>
+
+
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>

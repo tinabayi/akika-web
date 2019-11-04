@@ -4,8 +4,8 @@ from .models import Enterprise
 from .models import Business
 from .models import Academic
 from .models import Government
+from .models import NewsLetterRecipients
 from django import forms
-
 
 
 
@@ -52,4 +52,9 @@ class ContactForm(forms.Form):
             'style':'border-color:blue;'
         }
     )                            
-        
+
+
+
+class NewsLetterForm(forms.Form):
+    your_name = forms.CharField(label='First Name',max_length=30)
+    email = forms.EmailField(label='Email')

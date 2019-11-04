@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <style>
     .dropbtn {
@@ -49,7 +50,7 @@
     <img src="/media/image/logo.png" style="border-radius:50px;">
   </div>
   <div class="col-md-6">
-    <h2 style="color: yellow; font-size: 60px; font-weight: bold;">AKIKA-BEE-HIVE</h2>
+    <h2 style="color: yellow; font-size: 60px; font-weight: bold; font-family: 'Yeon Sung', cursive;">AKIKA-BEE-HIVE</h2>
   </div>
   </div>
 <nav class="navbar navbar-inverse" >
@@ -72,9 +73,11 @@
         <div class="dropdown">
             <button class="dropbtn">Solutions</button>
             <div class="dropdown-content">
-              <a href="{% url 'solutions' %}">Students and freelancers</a>
-              <a href="#">Enterprises and Businesses</a>
-              <a href="#">Academics & Governments</a>
+              <a href="#">Business</a>
+              <a href="{% url 'solutions' %}">Students</a>
+              <a href="{% url 'solution' %}">Enterprises</a>
+              <a href="{% url 'enterpreurship' %}">Entrepreneurship</a>
+              <a href="#">Academics</a>
             </div>
           </div>
 

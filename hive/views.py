@@ -4,10 +4,10 @@ from django.contrib.auth.decorators import login_required
 
 from django.core.mail import send_mail
 from .models import Student
-
-
+from .forms import NewsLetterForm
+from django.http import HttpResponse, Http404,HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
+from .email import send_welcome_email
 
 
 
@@ -171,6 +171,10 @@ def about(request):
 def solutions(request):
     return render(request, 'solutions.html')
 
+def solution1(request):
+    return render(request, 'solution1.html')   
+
+
 def contact(request):
     return render(request, 'contact.html')
 
@@ -193,3 +197,10 @@ def emailView(request):
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+def enterpreneurship(request):
+    return render(request, 'enterpreneurship.html')
+
+
+
+
+
