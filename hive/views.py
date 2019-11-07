@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
-from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm,GovernmentForm,ContactForm
+from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm,GovernmentForm,ContactForm,CommentForm
 from django.contrib.auth.decorators import login_required
 
 from django.core.mail import send_mail
-from .models import Student
-from .forms import NewsLetterForm
-from django.http import HttpResponse, Http404,HttpResponseRedirect
+from .models import Student,Comment,StudentApplying,AcademicApplying,businessEntApplying,Government
 from django.core.mail import send_mail, BadHeaderError
 from .email import send_welcome_email
-
+from .forms import NewsLetterForm
+from django.http import HttpResponse, Http404,HttpResponseRedirect
+from django.utils.translation import gettext as _
 
 
 
@@ -32,137 +32,7 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-hive/search.html',{"message":message}) 
-
-
-@login_required(login_url='/accounts/login/')
-def student(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = StudentForm(request.POST, request.FILES)
-        if form.is_valid():
-           first_name = form.save(commit=False)
-           last_name = form.save(commit=False)
-           education_level = form.save(commit=False)
-           student_email= form.save(commit=False)
-            # article.editor = current_user
-           first_name .save()
-           last_name .save()
-           education_level .save()
-           student_email .save()
-        return redirect('welcome')
-
-    else:
-        form = StudentForm()
-    return render(request, 'student.html', {"form": form})
-
-
-@login_required(login_url='/accounts/login/')
-def freelancer(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = FreelancerForm(request.POST, request.FILES)
-        if form.is_valid():
-           freelancer_names= form.save(commit=False)
-           project_name = form.save(commit=False)
-           freelancer_email = form.save(commit=False)
-           freelancer_names .save()
-           project_name .save()
-           freelancer_email .save()
-          
-        return redirect('welcome')
-
-    else:
-        form = FreelancerForm()
-    return render(request, 'freelancer.html', {"form": form})
-
-
-@login_required(login_url='/accounts/login/')
-def enterprise(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = EnterpriseForm(request.POST, request.FILES)
-        if form.is_valid():
-           enterprise_founder= form.save(commit=False)
-           enterprise_name = form.save(commit=False)
-           enterprise_location = form.save(commit=False)
-           entrprise_email= form.save(commit=False)
-            # article.editor = current_user
-           enterprise_founder .save()
-           enterprise_name .save()
-           enterprise_location .save()
-           entrprise_email .save()
-        return redirect('welcome')
-
-    else:
-        form =EnterpriseForm()
-    return render(request, 'enterprise.html', {"form": form})
-
-
-@login_required(login_url='/accounts/login/')
-def business(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = BusinessForm(request.POST, request.FILES)
-        if form.is_valid():
-           business_founder = form.save(commit=False)
-           business_name = form.save(commit=False)
-           business_location = form.save(commit=False)
-           business_email= form.save(commit=False)
-            # article.editor = current_user
-           business_founder .save()
-           business_name .save()
-           business_location .save()
-           business_email .save()
-        return redirect('welcome')
-
-    else:
-        form = BusinessForm()
-    return render(request, 'business.html', {"form": form})
-
-
-@login_required(login_url='/accounts/login/')
-def academic(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = AcademicForm(request.POST, request.FILES)
-        if form.is_valid():
-           academic_name = form.save(commit=False)
-           academic_location = form.save(commit=False)
-           academic_email = form.save(commit=False)
-          
-            # article.editor = current_user
-
-           academic_name  .save()
-           academic_location .save()
-           academic_email .save()
-        return redirect('welcome')
-
-    else:
-        form = AcademicForm()
-    return render(request, 'academic.html', {"form": form})
-
-
-@login_required(login_url='/accounts/login/')
-def government(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = GovernmentForm(request.POST, request.FILES)
-        if form.is_valid():
-           first_name = form.save(commit=False)
-           last_name = form.save(commit=False)
-           education_level = form.save(commit=False)
-           student_email= form.save(commit=False)
-            # article.editor = current_user
-           first_name .save()
-           last_name .save()
-           education_level .save()
-           student_email .save()
-        return redirect('welcome')
-
-    else:
-        form = GovernmentForm()
-    return render(request, 'government.html', {"form": form})
+        return render(request, 'all-hive/search.html',{"message":message})
 
 
 def about(request):
@@ -200,7 +70,153 @@ def successView(request):
 def enterpreneurship(request):
     return render(request, 'enterpreneurship.html')
 
+def news_today(request):
+    if request.method == 'POST':
+        global form
+        form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['your_name']
+            email = form.cleaned_data['email']
+
+            recipient = NewsLetterRecipients(name = name,email =email)
+            recipient.save()
+            send_welcome_email(name,email)
+
+            HttpResponseRedirect('welcome')
+        else:
+            form = NewArticleForm() 
+    return render(request, 'all-hive/today-news.html',{"letterForm":form})
+
+def team(request):
+    return render(request, 'team.html')
+
+def comment(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+           name = form.save(commit=False)
+           comment = form.save(commit=False)
+           education_level = form.save(commit=False)
+           name .save()
+           comment .save()
+           
+        return redirect('start')
+
+    else:
+        form = CommentForm()
+    return render(request, 'comment.html', {"form": form})
+
+def voir_comment(request):
+
+           comments = Comment.objects.all()
+           return render(request, 'see-comments.html',{"comments":comments})
+
+
+@login_required(login_url='/accounts/login/')
+def studentApply(request):
+    current_user = request.user
+    if request.method == 'POST':
+        first_r = request.POST.get('first')
+        last_r = request.POST.get('last')
+        phone_r = request.POST.get('phone')
+        email_r = request.POST.get('email')
+        identity_r = request.POST.get('identity')
+        level_r = request.POST.get('level')
+        college_r = request.POST.get('institution')
+        language_r = request.POST.get('language')
+        
+
+        c = studentApplying(first = first_r, last = last_r, phone = phone_r, email = email_r,identity = identity_r, level = level_r, college = college_r, language = language_r)
+        c.save()
+        
+
+        return render(request, 'successfull.html')
+       
+
+        
+    #Do something
+    else:
+
+         return render(request, 'studentApply.html')
 
 
 
+@login_required(login_url='/accounts/login/')
+def academicApply(request):
+    current_user = request.user
+    if request.method == 'POST':
+        name_r = request.POST.get('name')
+        email_r = request.POST.get('email')
+        location_r = request.POST.get('location')
+        adress_r = request.POST.get('adress')
+        
 
+        c = AcademicApplying(name = name_r, email = email_r,location = location_r, adress=adress_r)
+        c.save()
+        
+
+        return render(request, 'successfull.html')
+       
+
+        
+    #Do something
+    else:
+
+         return render(request, 'academicApply.html')
+
+
+
+@login_required(login_url='/accounts/login/')    
+def businessEntApply(request):
+    current_user = request.user
+    if request.method == 'POST':
+        business_founder_r = request.POST.get('business_founder')
+        business_name_r = request.POST.get('business_name')
+        business_location_r = request.POST.get('business_location')
+        business_email_r = request.POST.get('business_email')
+        contact_number_r = request.POST.get('contact_number')
+        business_type_r = request.POST.get('business_type')
+        message_r = request.POST.get('message')
+        other_r = request.POST.get('other')
+        
+
+        c = businessEntApplying(business_founder = business_founder_r, business_name =  business_name_r, business_location= business_location_r, business_email = business_email_r, contact_number = contact_number_r, business_type = business_type_r, message = message_r, other = other_r)
+        c.save()
+        
+
+        return render(request, 'successfull1.html')
+       
+
+        
+    #Do something
+    else:
+
+         return render(request, 'businessApply.html')     
+
+@login_required(login_url='/accounts/login/')    
+def governmentApply(request):
+    current_user = request.user
+    if request.method == 'POST':
+        institution_name_r = request.POST.get(' institution_name')
+        institution_location_r = request.POST.get('institution_location')
+        institution_address_r = request.POST.get('institution_address')
+        Contact_phone_r = request.POST.get(' Contact_phone')
+        Streect_adress_r = request.POST.get('Streect_adress')
+        acceptance_doc_r = request.POST.get('acceptance_doc')
+        message_r = request.POST.get('message')
+        other_r = request.POST.get('other')
+        
+
+        c = Government(institution_name = institution_name_r, institution_location =  institution_location_r, institution_address= institution_address_r, Contact_phone = Contact_phone_r, acceptance_doc = acceptance_doc_r, Streect_adress = Streect_adress_r, message = message_r, other = other_r)
+        c.save()
+        
+
+        return render(request, 'successfull1.html')
+       
+
+        
+    #Do something
+    else:
+
+         return render(request, 'governmentApply.html')     

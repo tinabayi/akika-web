@@ -1,5 +1,7 @@
 
+
 {%extends 'all-hive/base.html'%}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -170,18 +172,7 @@ by many aspiring entrepreneurs .</p></div>
                     </div>
               </div>
 
-
-              <!-- <div class="column">
-                  <div class="card">
-                    
-                    <h3>Blockchains /Crypto</h3> 
-                    <p>Blockchain technology is
-                        c ommonly associated with Bitcoin
-                        and other cryptocurrencies. It’s
-                        effectively a database that’s
-                        validated by a wider community,
-                        rather than a central authority .</p></div>
-                </div> -->
+             
 
 
     </div>
@@ -192,11 +183,17 @@ by many aspiring entrepreneurs .</p></div>
       <ul style="text-align:center; color:yellow; font-size:25px;font-family: 'Yeon Sung', cursive;">
       
 
-        <p>Are you a student? <a href="{%url 'student'%}">apply Here</a></p>
-        <p>&nbsp;&nbsp; Are you a freelancer? <a href="{%url 'enterprise'%}">apply Here</a></p>
-        <p>&nbsp;&nbsp;Are you in business? <a href="{%url 'business'%}">apply Here</a></p>
-         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are you a in academic? <a href="{%url 'academic'%}">apply Here</a></p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are you a government? <a href="{%url 'government'%}">apply Here</a></p>
+        <p>Are you a student? <a href="{%url 'studentApply'%}">apply Here</a></p>
+
+        <p>&nbsp;&nbsp;Are you in business? <a href="{%url 'businessEntApply'%}">apply Here</a></p>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are you a in academic? <a href="{%url 'academicApply'%}">apply Here</a></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are you a government? <a href="{%url 'governmentApply'%}">apply Here</a></p>
+<br><br>
+<h3>CONVERSATION</h3><br>
+<p style="margin-left: 50px"><a href="{%url 'comment'%}">Add comment</a></p>
+<p style="margin-left: 50px"><a href="{%url 'see'%}">Show more Comments</a></p>
+        
+       
 <style>
 a:hover{
   color:darkgoldenrod;
@@ -265,6 +262,7 @@ h3{
 
 
       </style>
+      %} 
 {% endblock %}
 </body>
 </html>

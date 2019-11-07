@@ -1,0 +1,17 @@
+{%extends 'all-hive/base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+
+  
+    {% for word in comments %}
+      <div class="col-sm-6 col-md-3">
+          <p>{{word.name}}</p>
+          <p>{{word.comment}}</p>
+      </div>
+    {% endfor %}
+  
+  </div>
+</div>
+{% endblock %}

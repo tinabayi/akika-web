@@ -52,4 +52,61 @@ class Government(models.Model):
 class NewsLetterRecipients(models.Model):
     name = models.CharField(max_length = 30)
     email = models.EmailField()
-   
+
+class Comment(models.Model):
+    name = models.CharField(max_length =60)
+    comment = models.TextField()
+    @classmethod
+    def see_comments(cl):
+        comments = cls.objects.all()
+        return comments  
+
+
+class StudentApplying(models.Model):
+    first = models.CharField(max_length =20,null=True)
+    last =  models.CharField(max_length =20 ,null=True)
+    phone = models.IntegerField(null=True)
+    email = models.EmailField(null=True)
+    identity =  models.CharField(max_length =20 ,null=True)
+    level = models.CharField(max_length =20 ,null=True)
+    college = models.CharField(max_length =20 ,null=True)
+    language= models.CharField(max_length =20 ,null=True)
+
+    def _def_(self):
+        return self.email
+
+
+class AcademicApplying(models.Model):
+    name = models.CharField(max_length =20,null=True)
+    email = models.EmailField(null=True)
+    location =  models.CharField(max_length =20 ,null=True)
+    adress = models.IntegerField(null=True)
+    
+    def _def_(self):
+        return self.name
+
+class businessEntApplying(models.Model):
+    business_founder = models.CharField(max_length =20,null=True)
+    business_name =  models.CharField(max_length =20 ,null=True)
+    business_location = models.CharField(max_length =20, null=True)
+    business_email = models.EmailField(null=True)
+    contact_number =  models.IntegerField(null=True)
+    business_type = models.CharField(max_length =20 ,null=True)
+    message = models.TextField(max_length =20 ,null=True)
+    other = models.TextField(max_length =20 ,null=True)
+
+    def _def_(self):
+        return self.business_email
+
+class Government(models.Model):
+    institution_name = models.CharField(max_length =60,null=True)
+    institution_location = models.CharField(max_length =60,null=True)
+    institution_address = models.CharField(max_length =30,null=True)
+    Contact_phone = models.IntegerField(null=True)
+    Streect_adress = models.IntegerField(null=True)
+    acceptance_doc = models.FileField(null=True)
+    message = models.TextField(null=True)
+    other = models.TextField(null=True)
+
+    def __str__(self):
+        return self.institution_name
