@@ -38,16 +38,21 @@ def search_results(request):
 def about(request):
     return render(request, 'about.html')
 
-def solutions(request):
-    return render(request, 'solutions.html')
+def students(request):
+    return render(request, 'student.html')
 
-def solution1(request):
-    return render(request, 'solution1.html')   
+def enterprise(request):
+    return render(request, 'enterprise.html')   
 
 
 def contact(request):
     return render(request, 'contact.html')
 
+def academic(request):
+    return render(request, 'academic.html')
+
+def business(request):
+    return render(request, 'business.html')
 
 def emailView(request):
     if request.method == 'GET':

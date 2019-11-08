@@ -1,0 +1,75 @@
+{%extends 'all-hive/base.html'%}
+
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+  {% block styles %}
+
+    {% bootstrap_css %}
+    
+  {% endblock %}
+
+</head>
+<body>
+    {% block content %} 
+   
+    <div style="background-image: url(https://images.pexels.com/photos/1843717/pexels-photo-1843717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size:cover; margin-top:-20px;">              
+
+
+    
+                 <div class="container" >
+
+                    <br>
+                    <h1 style="text-align:center;color: darkgoldenrod; font-weight: bold; font-family: 'Yeon Sung', cursive;">AKIKA-BEE-HIVE For Business</h1>
+                     <br>
+                    <div class="row">
+
+
+                            <p style="font-size: 20px;font-family:'Courier New', Courier, monospace"monospase" width="20px" height="20px ">We are committed to looking to the future, anticipating trends and reacting accordingly !</p> 
+                     </div><br>
+<h2>Culture of Innovation</h2>
+                      <div class="row">
+                            <p style="font-size: 20px; width="20px" height="20px">
+                                We are fostering the culture of innovations. Therefore, we are
+                                inviting all participants who have interesting ideas and solutions,
+                                who are enthusiastic and motivated, looking into the future, to
+                                work with us and use the AKIKA-BEEHIVE very actively. </p>    
+                        </div><br>
+
+<h2>Co-create and leverage</h2>
+
+                      <div class="row">
+                            <p style="font-size: 20px;width="20px"; height="20px">Through the use of the platform Universities will be able to adapt
+                                We assist companies to look beyond their internal resources to
+                                have a wider network in which to co-create and leverage fresh
+                                expertise, the “Open Innovation” workshop provides them an
+                                apparent view about generating new ideas to embrace competition.   </p>       
+                    </div><br>
+<h2>Stretching and shaping thinking</h2>
+                    <div class="row">
+                            <p style="font-size: 20px; width="20px" height="20px">AKIKA-BEEHIVE are therefore about strengthening high-schools
+                                The process helps you to accelerate your best ideas to market,
+                                working with your key people, stretching and shaping their
+                                thinking, and guiding them through the phases of insight and
+                                ideation, design and evaluation, strategy and implementation.  </p>    
+                        </div><br>
+
+
+                  </div>
+
+                
+    {%endblock%}
+</div> 
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
