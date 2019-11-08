@@ -6,10 +6,10 @@
 
   
     {% for word in comments %}
-      <div class="col-sm-6 col-md-3">
-          <p>{{word.name}}</p>
+      <div class="col-md-12">
+          <h4>{{word.name}}</h4>
           <p>{{word.comment}}</p>
-      </div>
+      </div><br>
     {% endfor %}
   
   </div>
