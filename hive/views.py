@@ -132,7 +132,7 @@ def studentApply(request):
         language_r = request.POST.get('language')
         
 
-        c = studentApplying(first = first_r, last = last_r, phone = phone_r, email = email_r,identity = identity_r, level = level_r, college = college_r, language = language_r)
+        c = StudentApplying(first = first_r, last = last_r, phone = phone_r, email = email_r,identity = identity_r, level = level_r, college = college_r, language = language_r)
         c.save()
         
 
