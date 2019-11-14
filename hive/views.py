@@ -9,6 +9,7 @@ from .email import send_welcome_email
 from .forms import NewsLetterForm
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from django.utils.translation import gettext as _
+from django.conf import settings
 
 
 
@@ -224,4 +225,18 @@ def governmentApply(request):
     #Do something
     else:
 
-         return render(request, 'governmentApply.html')     
+         return render(request, 'governmentApply.html')  
+
+
+
+def contactus(request):
+
+	if request.method == 'POST':
+		message = request.POST['message']
+
+		send_mail('Contact Form',
+		 message, 
+		 settings.EMAIL_HOST_USER,
+		 ['umulisaa0@gmail.com'], 
+		 fail_silently=False)
+	return render(request, 'contact.html')   

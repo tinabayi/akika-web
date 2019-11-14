@@ -52,7 +52,7 @@ class ContactForm(forms.Form):
         attrs={
             'style':'border-color:blue;'
         }
-    )                            
+    )                                                        
 
 
 
